@@ -1,22 +1,25 @@
 
 def this_run():
 
-	selector = "11Nov_globalAlphaT_alphaT0p55_noMHTMET_v0"
+	selector = "caloTest"
 
 	out_dict = {}
+	
+	out_dict["caloTest"] = {
 
-	out_dict["07Dec_SITV"] = {
-		"path_name": "rootfiles/Root_Files_07Dec_Full2013_Parked_noISRRW_SITV_fixedCode",
-		
-		"had_lumi": 18.493,
-		"mu_lumi": 19.131,
-		"ph_lumi": 19.12,
-		
-		"wj_corr": 0.9, # note: 0.85 gives a better post-correction agreement
-		"dy_corr": 3.02,
-		"tt_corr": 1.2,
-	}
+            "path_name": "rootfiles/caloTest/",
 
+            # All Runs
+            "had_lumi": 18.493,
+            "mu_lumi": 19.131,
+            "ph_lumi": 19.12,
+
+            # taken from parked final (change if necessary)
+            "wj_corr": 0.93,
+            "dy_corr": 0.94,
+            "tt_corr": 1.18,
+
+        }
 	out_dict["10Dec_AlphaT0p6"] = {
 		"path_name": "rootfiles/test_space",
 		

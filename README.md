@@ -1,26 +1,55 @@
-Directory contains all files necessary to run RA1 offline analysis. 
+#Setup
+Check out the offline analysis code (used for making tables, closure tests, rootfiles etc)
+```shell
+git clone https://github.com/CMSRA1/ICF_Offline_Analysis
+```
+make a directory for your rootfiles
+```shell
+mkdir rootfiles
+```
+make directories in here to contain your rootfiles, e.g. rootfiles/AlphaT0p53_noSITV_01Dec_v0
 
-Can be loosely called a framework, but in reality is a poor implementation of python classes. However it all works, but feel free to take, adapt and improve on this in future.
+cd into RA1_Offline_Analysis
+```shell
+cd RA1_Offline_Analysis
+```
 
+edit the run_details.py file to include your new directory. This requires a new entry in the dict
+```python
+out_dict["AlphaT0p53_noSITV_01Dec_v0"] = {
 
-------------------------
+    "path_name": "rootfiles/rootfiles/AlphaT0p53_noSITV_01Dec_v0",
+    
+    # All Runs
+    "had_lumi": 18.493,
+    "mu_lumi": 19.131,
+    "ph_lumi": 19.12,
 
-Prediction RA1 - Config file, file paths to file directories are set here 
+    # taken from parked final (change if necessary)
+    "wj_corr": 0.93,
+    "dy_corr": 0.94,
+    "tt_corr": 1.18,
 
-Run_All...    - bash scripts to automatically produce all usual required RA1 outputs
+    }
+```
+use these values. they represent the luminosities of each data sample and the HT sideband corrections
+set the variable "selector" (at the top of the file) to be the key of your new dictionary entry
+#Run Details
 
--------------------------
+Try running to make some tables
+```shell
+./Prediction_RA1.py -u 2
+```
+this produce vanilla (not formula method) tables for the le3j category
+```shell
+2 - le3j
+3- ge4j
+all - ge2j
 
-========================
-
-NumberCruncher - Produces a dictionary of all yields, errors for all processes and sorts them into relevant 'sub' dictionaries for insertion in tables or closure tests
-
-Closure Tests - Where closure tests are defined and then produced
-
-Btag_Calculation - This is where the RA1 formula method is implemented. Yields are formulaically calculated through jet flavour content of each process. 
-
-Calculation_Template - Not used in RA1 analysis, used for producing template method to estimate yields at high b-tag multiplicities.
-
-Fit_MHT_MET - Absoultely budget way to determine linear fit for MHT_MET sidebands
-
-========================
+-u - vanilla tables
+-n - formula tables
+-c closure tests (additional arguement is 'jetcat')
+-r - rootfiles for input to stats code
+-m - sideband normalisation
+```
+different variables can be changed in Prediction_RA1.py, such as the alphaT slice, the HT bins, whether to apply the sideband corrections etc. etc.

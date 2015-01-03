@@ -37,9 +37,9 @@ if len(tex_files) == 0:
 	sys.exit()
 
 # compile all tex files
-print "\n>>> Compiling tex files to dvi.\n"
+print "\n>>> Compiling tex files to pdf.\n"
 for n, file_name in enumerate(tex_files):
-	status = cmds.getstatusoutput("latex %s" % file_name)
+	status = cmds.getstatusoutput("pdflatex %s" % file_name)
 	print_progress(100.*float(n)/len(tex_files))
 	if status[0] != 0:
 		print "Balls up on file: %s" % file_name
@@ -53,15 +53,15 @@ if len(dvi_files) == 0:
 	print ">>  Check if latex compilation was successful."
 	sys.exit()
 
-# convert dvi to pdf
-print "\n\n>>> Concerting dvi to pdf.\n"
-for n, file_name in enumerate(dvi_files):
-	status = cmds.getstatusoutput("dvipdf %s" % file_name)
-	print_progress(100.*float(n)/len(dvi_files))
-	if status[0] != 0:
-		print "Balls up on file: %s" % file_name
-		print status
-print_progress(100.)
+# # convert dvi to pdf
+# print "\n\n>>> Concerting dvi to pdf.\n"
+# for n, file_name in enumerate(dvi_files):
+# 	status = cmds.getstatusoutput("dvipdf %s" % file_name)
+# 	print_progress(100.*float(n)/len(dvi_files))
+# 	if status[0] != 0:
+# 		print "Balls up on file: %s" % file_name
+# 		print status
+# print_progress(100.)
 
 print "\n\n>>> Cleaning up all files ['gz', 'aux', 'dvi', 'log']\n"
 status = cmds.getstatusoutput("rm *gz *aux *dvi *log")

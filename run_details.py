@@ -1,9 +1,20 @@
 def this_run():
 
-	selector = "05Dec_aT_0p53_fullHT_fineJet_dPhi_lt0p3_v0"
+	selector = "pf_150103"
 
 	out_dict = {}
 
+	out_dict["pf_150103"] = {
+		"path_name": "rootfiles/pf_150103",
+		
+		"had_lumi": 18.493,
+		"mu_lumi": 19.131,
+		"ph_lumi": 19.12,
+		
+		"wj_corr": 0.9, # note: 0.85 gives a better post-correction agreement
+		"dy_corr": 3.02,
+		"tt_corr": 1.2,
+	}
 	out_dict["07Dec_SITV"] = {
 		"path_name": "rootfiles/Root_Files_07Dec_Full2013_Parked_noISRRW_SITV_fixedCode",
 		

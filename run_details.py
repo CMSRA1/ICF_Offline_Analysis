@@ -1,13 +1,59 @@
 
 def this_run():
 
-	selector = "caloTest"
+	#selector = "calo_141231"
+	selector = "pf_150103"
 
 	out_dict = {}
 	
-	out_dict["caloTest"] = {
+	out_dict["pf_150103"] = {
 
-            "path_name": "rootfiles/caloTest/",
+            "path_name": "rootfiles/pf_150103/",
+
+            # All Runs
+            "had_lumi": 18.493,
+            "mu_lumi": 19.131,
+            "ph_lumi": 19.12,
+
+            # taken from parked final (change if necessary)
+            "wj_corr": 0.93,
+            "dy_corr": 0.94,
+            "tt_corr": 1.18,
+
+        }
+	out_dict["calo_141231"] = {
+
+            "path_name": "rootfiles/calo_141231/",
+
+            # All Runs
+            "had_lumi": 18.493,
+            "mu_lumi": 19.131,
+            "ph_lumi": 19.12,
+
+            # taken from parked final (change if necessary)
+            "wj_corr": 0.93,
+            "dy_corr": 0.94,
+            "tt_corr": 1.18,
+
+        }
+	out_dict["pfTest"] = {
+
+            "path_name": "rootfiles/pfTest/",
+
+            # All Runs
+            "had_lumi": 18.493,
+            "mu_lumi": 19.131,
+            "ph_lumi": 19.12,
+
+            # taken from parked final (change if necessary)
+            "wj_corr": 0.93,
+            "dy_corr": 0.94,
+            "tt_corr": 1.18,
+
+        }
+	out_dict["pfNoBadMuonTest"] = {
+
+            "path_name": "rootfiles/pfNoBadMuon/",
 
             # All Runs
             "had_lumi": 18.493,

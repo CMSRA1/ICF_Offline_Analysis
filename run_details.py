@@ -1,11 +1,23 @@
 def this_run():
 
-	selector = "pf_150103"
+	selector = "pf_150105"
+#	selector = "calo_150103"
 
 	out_dict = {}
 
-	out_dict["pf_150103"] = {
-		"path_name": "rootfiles/pf_150103",
+	out_dict["pf_150105"] = {
+		"path_name": "rootfiles/pf_150105",
+		
+		"had_lumi": 18.493,
+		"mu_lumi": 19.131,
+		"ph_lumi": 19.12,
+		
+		"wj_corr": 0.9, # note: 0.85 gives a better post-correction agreement
+		"dy_corr": 3.02,
+		"tt_corr": 1.2,
+	}
+	out_dict["calo_150103"] = {
+		"path_name": "rootfiles/calo_150103",
 		
 		"had_lumi": 18.493,
 		"mu_lumi": 19.131,

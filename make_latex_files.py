@@ -46,10 +46,10 @@ for n, file_name in enumerate(tex_files):
 		print status
 print_progress(100.)
 
-dvi_files = glob.glob("RA1*.dvi")
+dvi_files = glob.glob("RA1*.pdf")
 
 if len(dvi_files) == 0:
-	print ">>  Error: no RA1*.dvi files found."
+	print ">>  Error: no RA1*.pdf files found."
 	print ">>  Check if latex compilation was successful."
 	sys.exit()
 

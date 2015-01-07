@@ -2,7 +2,7 @@
 def this_run():
 
 	#selector = "calo_141231"
-	selector = "pf_150103"
+	selector = "calo_150107"
 
 	out_dict = {}
 	
@@ -21,9 +21,9 @@ def this_run():
             "tt_corr": 1.18,
 
         }
-	out_dict["calo_141231"] = {
+	out_dict["calo_150107"] = {
 
-            "path_name": "rootfiles/calo_141231/",
+            "path_name": "rootfiles/calo_150107/",
 
             # All Runs
             "had_lumi": 18.493,

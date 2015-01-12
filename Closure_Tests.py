@@ -99,7 +99,7 @@ class Jad_Compute(object):
     else:
       
       #mumu to mumu
-      test_4 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -3.,'box' : "False",'plot_title':"#mu#mu + jets (#alpha_{T} < 0.55) #rightarrow #mu#mu + jets (#alpha_{T}>0.55)",'scale':None , 'reduce':"False",'file_name':'Btag_dimuon_to_dimuon_with_without_alphaT','spread':"False"}
+      test_4 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -3.,'box' : "False",'plot_title':"#mu#mu + jets (#alpha_{T} < 0.53) #rightarrow #mu#mu + jets (#alpha_{T}>0.53)",'scale':None , 'reduce':"False",'file_name':'Btag_dimuon_to_dimuon_with_without_alphaT','spread':"False"}
       test_7 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -7.,'box' : "False",'plot_title':"#mu#mu + jets (0-b-tag) #rightarrow #mu#mu + jets (2-b-tag) (no #alpha_{T})",'scale':None , 'reduce':"False",'file_name':'Btag_dimuon_zero_to_dimuon_two_no_alphaT_Cut','spread':"False"}
       test_14 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -14.,'box' : "False",'plot_title':"#mu#mu + jets (0-b-tag) #rightarrow #mu#mu + jets (1-b-tag) (no #alpha_{T})",'scale': None , 'reduce':"False",'file_name':'Btag_mumu_zero_mmuu_one_no_alphaT_Cut','spread':"False" }
 
@@ -115,7 +115,7 @@ class Jad_Compute(object):
       test_25 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -23.,'box' : "True", 'plot_title':"#mu + jets (>=1-btag) #rightarrow #mu#mu + jets (>=2-btag)(no #alphaT) ",'scale':None,'reduce':"False",'file_name':'Btag_greater_zero_mu_to_dimuon_greater_one_no_alphaT_Cut','spread':'True' }
 
       #mu to mu
-      test_3 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -2.,'box' : "False",'plot_title':"#mu + jets (#alpha_{T} < 0.55) #rightarrow #mu + jets (#alpha_{T}>0.55)",'scale':None , 'reduce':"False", 'file_name':'Btag_mu_to_mu_with_without_alphaT','spread':"False" }
+      test_3 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -2.,'box' : "False",'plot_title':"#mu + jets (#alpha_{T} < 0.53) #rightarrow #mu + jets (#alpha_{T}>0.53)",'scale':None , 'reduce':"False", 'file_name':'Btag_mu_to_mu_with_without_alphaT','spread':"False" }
       test_5 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -4.,'box' : "False",'plot_title':"#mu + jets (0-b-tag) #rightarrow #mu + jets (1-b-tag) (no #alpha_{T})",'scale': None , 'reduce':"False",'file_name':'Btag_mu_zero_mu_one_no_alphaT_Cut','spread':"False" } 
       test_6 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -5.,'box' : "False",'plot_title':"#mu + jets (0-b-tag) #rightarrow #mu + jets (>1-b-tag) (no #alpha_{T})",'scale':None , 'reduce':"False",'file_name':'Btag_mu_zero_mu_greater_one_no_alphaT_Cut','spread':"False"   }
       test_12 = {'MCS' : [], 'MCSE': [],'MCC': [], 'MCCE':[],'DC':[],'DS':[],'option' : -11.,'box' : "False",'plot_title':"#mu + jets (1-b-tag) #rightarrow #mu + jets (2-b-tag) (no #alpha_{T})",'scale': None , 'reduce':"False",'file_name':'Btag_mu_one_mu_two_no_alphaT_Cut','spread':"False"   }
@@ -127,6 +127,7 @@ class Jad_Compute(object):
                 'scale':None , 'reduce':"False",'file_name':'Btag_mu_zero_mu_two_no_alphaT_Cut','spread':"False"}
 
       test_dicts = [test_4,test_2,test_24,test_22,test_3,test_5,test_6,test_12,test_80,test_20,test_21]
+      #test_dicts = [test_4,test_3]
 
     """
     We loop through all the dictionaries passed to closure tests from Numbercruncher here and if they fit the category we want to produce a closure test for we pass onto Fill_Dictionary. 
@@ -233,13 +234,13 @@ class Jad_Compute(object):
 
         elif self.Classic == "True":
 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive':
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive':
             self.Fill_Dictionary(test_1,Control = "Muon", Signal = "DiMuon")
 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive':
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive':
             self.Fill_Dictionary(test_2,Control = "Photon", Signal = "DiMuon")
 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive':
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive':
             self.Fill_Dictionary(test_3,Control = "Photon", Signal = "Muon")
 
         else:
@@ -251,14 +252,14 @@ class Jad_Compute(object):
             self.Fill_Dictionary(test_2,Control = "Muon", Signal = "DiMuon") 
 
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'Inclusive' :
-            self.Fill_Dictionary(test_3,Control = "Muon", Signal = "Muon",Not_Do = 'Signal',Subtract = True,AlphaT="0.55",Btag="Inclusive",SampleName = "Muon") 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive' :
+            self.Fill_Dictionary(test_3,Control = "Muon", Signal = "Muon",Not_Do = 'Signal',Subtract = True,AlphaT="0.53",Btag="Inclusive",SampleName = "Muon") 
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive' :
             self.Fill_Dictionary(test_3,Control = "Muon", Signal = "Muon",Not_Do = 'Control')         
 
             # turn off these with global alphaT
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'Inclusive' :
-            self.Fill_Dictionary(test_4,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Signal',Subtract = True,AlphaT="0.55",Btag="Inclusive",SampleName = "DiMuon") 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive' :
+            self.Fill_Dictionary(test_4,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Signal',Subtract = True,AlphaT="0.53",Btag="Inclusive",SampleName = "DiMuon") 
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive' :
             self.Fill_Dictionary(test_4,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Control')
 
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'Zero_btags' :
@@ -291,12 +292,12 @@ class Jad_Compute(object):
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'One_btag' :
             self.Fill_Dictionary(test_14,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Control')
  
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Zero_btags':
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Zero_btags':
             self.Fill_Dictionary(test_20,Control = "Photon", Signal = "Photon",Not_Do = 'Signal') 
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'Zero_btags':
             self.Fill_Dictionary(test_20,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Control') 
 
-          if self.file[self.entry]['AlphaT'] == '0.55' and self.file[self.entry]['Btag'] == 'Inclusive':
+          if self.file[self.entry]['AlphaT'] == '0.53' and self.file[self.entry]['Btag'] == 'Inclusive':
             self.Fill_Dictionary(test_21,Control = "Photon", Signal = "Photon",Not_Do = 'Signal') 
           if self.file[self.entry]['AlphaT'] == '0.01' and self.file[self.entry]['Btag'] == 'Inclusive':
             self.Fill_Dictionary(test_21,Control = "DiMuon", Signal = "DiMuon",Not_Do = 'Control') 

@@ -2,7 +2,7 @@
 def this_run():
 
 	#selector = "calo_141231"
-	selector = "pf_150107"
+	selector = "calo_150113"
 	#selector = "calo_chris_150107"
 
 	out_dict = {}
@@ -25,6 +25,21 @@ def this_run():
 	out_dict["pf_150108"] = {
 
             "path_name": "rootfiles/pf_dphi_gt0p3_fixedcc_muon_nominal_150109//",
+
+            # All Runs
+            "had_lumi": 18.493,
+            "mu_lumi": 19.131,
+            "ph_lumi": 19.12,
+
+            # taken from parked final (change if necessary)
+            "wj_corr": 0.93,
+            "dy_corr": 0.94,
+            "tt_corr": 1.18,
+
+        }
+	out_dict["calo_150113"] = {
+
+            "path_name": "rootfiles/calo_nominal_fixedcc_150113_assbin/",
 
             # All Runs
             "had_lumi": 18.493,
